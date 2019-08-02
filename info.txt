@@ -35,14 +35,13 @@
 	The below defined function in script let you replace multiple values at a time from one single string.
 	#### Like if you want to replace , = " & using one single command
 	def replaceMultiple(mainString, toBeReplaces, newString):
-    # Iterate over the strings to be replaced
-    for elem in toBeReplaces:
-        # Check if string is in the main string
-        if elem in mainString:
-            # Replace the string
-            mainString = mainString.replace(elem, newString)
-
-    return mainString
+        # Iterate over the strings to be replaced
+            for elem in toBeReplaces:
+                # Check if string is in the main string
+                if elem in mainString:
+                   # Replace the string
+                   mainString = mainString.replace(elem, newString)
+                   return mainString
 
     Connects you to RDS Postgress via script
 	Let you put data to S3 via python script
