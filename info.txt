@@ -16,9 +16,9 @@
 	
 	Below are some basic used commands :
 	Show all schemas : \dn
-    List all databases : \l
-    Connect to databases : \c dbname
-    List all tables : \dt
+        List all databases : \l
+        Connect to databases : \c dbname
+        List all tables : \dt
 	
 2.  Use log downloader to download the logs 
     Script name : logDownloadScript.py
