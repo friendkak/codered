@@ -1,0 +1,55 @@
+##################################################################################
+#####    CODEred INFO FILE                                                       #
+#####    TECH STACK : RDS EC2 KINESIS S3                                         #
+#####    RDS POSTGRES                                                            #
+#####    DB (RDS) <-> EC2 <-> Kinesis <-> S3                                     #
+##################################################################################
+
+1.  Use producer script to insert data to RDS / Use AWS CLI to do the same
+    Use the script to insert data with the below simple syntax :
+	producerScript.py "userid" "username"
+	
+    Connect the RDS instance using CLI :
+	psql -h ddi-name-shubhankar.abcdefgh59e.us-east-1.rds.amazonaws.com -U username -d postgres
+	Should prompt for password...
+	Once authenticated.. all yours :)
+	
+	Below are some basic used commands :
+	Show all schemas : \dn
+    List all databases : \l
+    Connect to databases : \c dbname
+    List all tables : \dt
+	
+2.  Use log downloader to download the logs 
+    Script name : logDownloadScript.py
+	Run command : python logDownloadScript.py AccessKEY SecretKEY AccessTOKEN
+	
+    The script then triggers the putDataToStream.py python script to move data to S3 using kinesis firehose
+	
+	
+	
+	
+	
+	Highlights :
+	
+	The below defined function in script let you replace multiple values at a time from one single string.
+	#### Like if you want to replace , = " & using one single command
+	def replaceMultiple(mainString, toBeReplaces, newString):
+    # Iterate over the strings to be replaced
+    for elem in toBeReplaces:
+        # Check if string is in the main string
+        if elem in mainString:
+            # Replace the string
+            mainString = mainString.replace(elem, newString)
+
+    return mainString
+
+    Connects you to RDS Postgress via script
+	Let you put data to S3 via python script
+	
+
+
+HAAAAPPPYYYYYY COOOODDDDIIINGGG..... :-) 
+
+
+
